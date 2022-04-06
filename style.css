@@ -1,0 +1,42 @@
+*{
+    margin: 0px auto;
+    width: 0px auto;
+}
+/* body style */
+body{
+    background-color:steelblue;
+}
+/* header style */
+.header{
+    text-align: center;
+    font-size: 40;
+}
+/* body section  */
+.bsection{
+    align-items:  center;
+    font-size: 40;
+}
+/* gamebored screen */
+.bsection{
+    align-items:  center;
+    font-size: 40;
+}
+
+/* circle division  */
+.circle{
+    align-items:  center;
+    font-size: 40;
+}
+
+.greenBtn{
+    align-items:  center;
+    font-size: 40;
+}
+.blueBtn{
+    align-items:  center;
+    font-size: 40;
+}
+.redBtn{
+    align-items:  center;
+    font-size: 40;
+}
