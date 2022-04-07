@@ -4,39 +4,188 @@
 }
 /* body style */
 body{
-    background-color:steelblue;
+    background-color:darkslategray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+   
 }
 /* header style */
 .header{
     text-align: center;
-    font-size: 40;
+    font-size: 40px;
+    color: cadetblue;
+}
+/* h1 style */
+h1{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 80px;
 }
 /* body section  */
 .bsection{
     align-items:  center;
-    font-size: 40;
+    font-size: 40px;
+    color:cadetblue;
 }
 /* gamebored screen */
-.bsection{
+.screenBoard{
     align-items:  center;
     font-size: 40;
+    border-radius: 50px;
+    width: 50px;
+    margin-right: 15%;
 }
 
+/* Container */
+.container{
+    align-items:  center;
+    font-size: 40px;
+}
 /* circle division  */
 .circle{
     align-items:  center;
+    border-radius:50%;
+    background-color:cadetblue;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    padding: 10px;
+    background-image:u
+
+}
+/* * Green division  */ 
+.greenBtn{
+    font-size: 40;
+    /* border-radius: 60%; */
+    width:25%;
+    height: 100px;
+    display: flex;
+    align-items:  center;
+    background-color:green;
+    padding: 40px;
+    justify-content: space-around;
+    border-top-left-radius: 380%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 600%;
+    border-bottom-right-radius: 10%;
+}
+
+.greenBtn:hover{
+    font-size: 40;
+    /* border-radius: 60%; */
+    width:25%;
+    height: 100px;
+    display: flex;
+    align-items:  center;
+    background-color:green;
+    justify-content: space-between;
+    border-top-left-radius: 25%;
+}
+/* * Yellow division  */ 
+.yellowBtn{
+    font-size: 40;
+    border-radius: 60%;
+    width:50%;
+    height: 100px;
+    align-items:  center;
+    background-color:yellow;
+    justify-content: space-between;
+    border-top-left-radius: 380%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 600%;
+    border-bottom-right-radius: 10%;
+}
+
+/* * Blue division  */ 
+.blueBtn{
+    font-size: 40;
+    border-radius: 60%;
+    width:50%;
+    height: 100px;
+    background-color:blue;
+    justify-content: space-between;
+    border-top-left-radius: 300%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 600%;
+    border-bottom-right-radius: 10%;
+
+}
+
+/* * Red division  */ 
+.redBtn{
+    font-size: 40;
+    border-radius: 60%;
+    width:50%;
+    height: 100px;
+    display: flex;
+    align-items:  center;
+    background-color: red;
+    justify-content: space-between;
+    border-top-left-radius: 380%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 600%;
+    border-bottom-right-radius: 10%;
+    
+}
+
+/* * start division  */  
+.start{
+    align-items:  center;
+    font-size: 40;
+    
+    /* border-radius: 100px;
+    width:100px;
+    height: 100px;
+    background-color: red;
+    margin: 40px; */
+}
+/* * start division  */  
+.startBtn{
+    align-items:  center;
+    font-size: 40;
+    border-radius: 150px;
+    border: 60px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 30px 40px;
+    position: relative;
+    display: flex;
+    margin:auto;
+}
+
+/* * display division  */  
+.display{
+    align-items:  center;
+    display: flex;
+    margin: 0px 30px;
+
+}
+/* * score division  */  
+.score{
+    align-items:  center;
     font-size: 40;
 }
 
-.greenBtn{
+/* * score division  */  
+.restart{
     align-items:  center;
     font-size: 40;
 }
-.blueBtn{
+
+/* * reset button  */  
+.resetBtn{
     align-items:  center;
     font-size: 40;
+    border-radius: 60px;
+    width: 100px;
+    height: 50px;
+    background-color:darkgray;
+    
 }
-.redBtn{
+
+/* * score division  */  
+.footer
+{
     align-items:  center;
     font-size: 40;
 }

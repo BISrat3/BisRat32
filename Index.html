@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <!-- header of the the page -->
@@ -13,38 +15,29 @@
     </header>
     <!-- section body of the page -->
     <section class="bsection">
-        <div></div>
+        <div class="screenBoard">
+            <h2>Screen</h2>
+        </div>
     </section>
     <!-- gameboard -->
-    <section>
-        <div>
+    <section >
+        <div class="container">
             <div class="circle">
-                <div>
                     <button class="greenBtn">
                         Green
                     </button>
-                </div>
-                <div>
                     <button class="yellowBtn">
                         Yellow
                     </button>
-                </div>
-                <div>
                     <button class="blueBtn">
                         Blue
                     </button>
-                </div>
-                <div>
                     <button class="redBtn">
                         Red
                     </button>
-                </div>
-                <div class="start">
                     <button class="startBtn">
                         Start
                     </button>
-                </div>
-                <div></div>
             </div>
         </div>
     </section>
@@ -52,15 +45,22 @@
     <section>
         <div class="display">
             <div class="score">
-                <button type="score">
+                <button type="score"> 
+                    <input type="name" value="" placeholder="counter">
                 </button>
             </div>
-            <div class="Restart"></div>
+            <div class="restart">
+                <button class="resetBtn">
+                    Reset
+                </button>
+            </div>
         </div>
     </section>
     <!-- footer -->
     <footer>
-        <div></div>
+        <div class="footer">
+
+        </div>
     </footer>
 </body>
 </html>
