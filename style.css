@@ -48,12 +48,6 @@ h1{
     border-bottom-right-radius: 30%;
 }
 
-/* .container{
-    align-items:  center;
-    font-size: 40px;
-    max-width: 500%;
-    max-height: 400%;
-} */
 /* circle division  */
 .circle{
     position: relative;
@@ -78,21 +72,28 @@ h1{
 .greenBtn{
     width: 250px;
     height: 250px;
-    background-color:green;
+    background-color:springgreen;
     border:1px solid red;
     border-top-left-radius: 250px;
     /* border-top-right-radius: 10px; */
     /* border-bottom-left-radius: 0px; */
-    border-bottom-right-radius: 60px;
+    border-bottom-right-radius: 0px;
     /* justify-content: space-between; */
 }
     
+.greenBtn:hover{
+    background-color:mediumseagreen;
+    cursor: pointer;
+}
 
+.greenBtn:active{
+    background-color:darkgreen;
+}
 /* * red button  */ 
 .redBtn{
     width: 250px;
     height: 250px;
-    background-color:red;
+    background-color:tomato;
     border:1px;
     /* padding: 0px -50px; */
     border-top-left-radius: 0px;
@@ -100,17 +101,24 @@ h1{
     /* border-bottom-left-radius: 80px; */
     /* justify-content: space-between; */
 }
+.redBtn:hover{
+    background-color:red;
+    cursor: pointer;
+}
 
+.redBtn:active{
+    background-color:darkred;
+}
 /* * start Button  */  
 .startBtn{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background-color:lawngreen;
-    border-radius: 40px;
+    border-radius: 50%;
     align-self: center;
     text-align: center;
     position: absolute;
-    margin-left: 220px;
+    margin-left: 200px;
     /* margin: 30px 30px; */
     
 }
@@ -118,7 +126,7 @@ h1{
 .yellowBtn{
     width: 250px;
     height: 250px;
-    background-color:yellow;
+    background-color:lightyellow;
     border:1px;
     /* border-top-left-radius: 10px; */
     border-top-right-radius: 0px;
@@ -127,18 +135,34 @@ h1{
     justify-content: space-between;
     
 }
+.yellowBtn:hover{
+    background-color:gold;
+    cursor: pointer;
+}
+
+.yellowBtn:active{
+    background-color:yellow;
+}
+
 /* * Blue button  */ 
 .blueBtn{
     width: 250px;
     height: 250px;
-    background-color:blue;
+    background-color:lightskyblue;
     border:1px;
     border-top-left-radius: 10px;
     border-top-right-radius: 0px;
     /* border-bottom-left-radius: 80px; */
     border-bottom-right-radius:250px;
 }
+.blueBtn:hover{
+    background-color:blue;
+    cursor: pointer;
+}
 
+.blueBtn:active{
+    background-color:darkblue;
+}
 
 /* * display division  */  
 .display{

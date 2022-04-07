@@ -1,7 +1,11 @@
-// Defining variables 
+// Defining variables/ declaring valriables
 let player = [];
-let simon = ['green','red','yellow','blue'];
+let simon = [];
 const arrayColors = ['green','red','yellow','blue'];
+
+let winner;
+let result;
+let stopGame = true;
 
 const green = document.querySelector('.greenBtn')
 // console.log(green)
@@ -19,6 +23,7 @@ const reset = document.querySelector('.resetBtn')
 // adding eventListener for each button
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
+
 })
 
 green.addEventListener('click', ()=> {
