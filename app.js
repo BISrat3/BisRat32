@@ -45,27 +45,48 @@ reset.addEventListener('click', ()=> {
 
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
-        displayScreen.innerHTML ="Lets start the Game"
-        counter.innerHTML.level = ""
+        displayScreen.innerHTML ="Start the Game"
+        counter.innerHTML = "level 0";
+        player = [];
+        simonChoice = [];
         getSelectedColor()
         
-
 })
+
+// function for selecting random color
+
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * 4)]
-    // console.log(colorSelected)
+    //  console.log(colorSelected)
     simonChoice.push(colorSelected)
     // console.log(simonChoice)
     highlightSequence()
 }
 // getSelectedColor()
-function highlightSequence(){
-    
-    simonChoice.forEach(choice, i)
-    for(let i=0;i<=simonChoice.length;i++){
-        console.log(simonChoice[i])
-        setTimeout(function (){
 
-        }, 500 )
-    }
+
+function highlightSequence(){    
+    simonChoice.forEach((choice, i) => {
+// for(let i=0;i<=simonChoice.length;i++){
+    // console.log(simonChoice[i])
+    setTimeout((choice)=>{
+        if(simonChoice[i] === arrayColors[0]){
+            green.style.background = "green";
+            console.log(simonChoice[i])
+        }
+        else if(simonChoice[i] === arrayColors[1]){
+            red.style.background = "red";
+            console.log(simonChoice[i])
+        }
+        else if (simonChoice[i] === arrayColors[2]){
+            yellow.style.background = "yellow";
+            console.log(simonChoice[i])
+        }
+        else if (simonChoice[i] === arrayColors[3]){
+            blue.style.background = "blue";
+            console.log(simonChoice[i])
+        }
+    }, 500 * i )
+    })
 }
+
