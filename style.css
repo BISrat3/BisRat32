@@ -162,18 +162,10 @@ h1{
     background-color:blue;
     cursor: pointer;
 } */
-.blueDark{
+
+.blueBtn:active{
     background-color:darkblue;
-    color: aliceblue;
 }
-.redDark{
-    color:rebeccapurple;
-    background-color:red;
-    
-}
-/* .blueBtn:active{
-    background-color:darkblue;
-} */
 
 /* * display division  */  
 .display{
