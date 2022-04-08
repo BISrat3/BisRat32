@@ -39,7 +39,10 @@ h1{
     border:10px solid red;
     
 }
-#screenInput{
+#screenBoard, textarea{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
     width:200px;
     height:200px;
     background-color: cadetblue;
@@ -81,10 +84,10 @@ h1{
     /* justify-content: space-between; */
 }
     
-.greenBtn:hover{
+/* .greenBtn:hover{
     background-color:mediumseagreen;
     cursor: pointer;
-}
+} */
 
 .greenBtn:active{
     background-color:darkgreen;
@@ -101,10 +104,10 @@ h1{
     /* border-bottom-left-radius: 80px; */
     /* justify-content: space-between; */
 }
-.redBtn:hover{
+/* .redBtn:hover{
     background-color:red;
     cursor: pointer;
-}
+} */
 
 .redBtn:active{
     background-color:darkred;
@@ -135,10 +138,10 @@ h1{
     justify-content: space-between;
     
 }
-.yellowBtn:hover{
+/* .yellowBtn:hover{
     background-color:gold;
     cursor: pointer;
-}
+} */
 
 .yellowBtn:active{
     background-color:yellow;
@@ -155,10 +158,10 @@ h1{
     /* border-bottom-left-radius: 80px; */
     border-bottom-right-radius:250px;
 }
-.blueBtn:hover{
+/* .blueBtn:hover{
     background-color:blue;
     cursor: pointer;
-}
+} */
 
 .blueBtn:active{
     background-color:darkblue;
