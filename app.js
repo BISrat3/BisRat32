@@ -48,6 +48,7 @@ reset.addEventListener('click', ()=> {
     counter.innerHTML = "";
     player = [];
     simonChoice = [];
+    startGame = false;
 })
 
 
@@ -67,34 +68,50 @@ function getSelectedColor(){
     //  console.log(colorSelected)
     simonChoice.push(colorSelected)
     // console.log(simonChoice)
-    highlightSequence()
+    simonSelections()
 }
 // getSelectedColor()
 
-function highlightSequence(){    
-    simonChoice.forEach((colors, i) => {
-// for(let i=0;i<=simonChoice.length;i++){
-    // console.log(simonChoice[i])
+// function of simon slection
+function simonSelections(){    
+    simonChoice.forEach((colorSelected, i) => {
     setTimeout(()=>{
         if (startGame = true){
             if(simonChoice[i] === arrayColors[0]){
                 green.style.background = "green";
-                console.log(simonChoice[i])
+                // console.log(simonChoice[i])
+                setTimeout(()=>
+                {
+                    green.style.background = "springgreen"
+                } ,500)
+                
             }
             else if(simonChoice[i] === arrayColors[1]){
                 red.style.background = "red";
-                console.log(simonChoice[i])
+                // console.log(simonChoice[i])
+                setTimeout(()=>
+                {
+                    red.style.background = "tomato"
+                } ,500)
             }
             else if (simonChoice[i] === arrayColors[2]){
                 yellow.style.background = "yellow";
-                console.log(simonChoice[i])
+                // console.log(simonChoice[i])
+                setTimeout(()=>
+                {
+                    yellow.style.background = "lightyellow"
+                } ,500)
             }
             else if (simonChoice[i] === arrayColors[3]){
                 blue.style.background = "blue";
-                console.log(simonChoice[i])
+                // console.log(simonChoice[i])
+                setTimeout(()=>
+                {
+                    blue.style.background = "lightskyblue"
+                } ,500)
             }
         else {
-            
+
             displayScreen.innerText = "Click the right button to start the game"
         }
         }  
