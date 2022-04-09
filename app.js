@@ -2,7 +2,6 @@
 let player = [];
 let simonChoice = [];
 const arrayColors = ['green','red','yellow','blue'];
-
 let winner;
 let level =0;
 let startGame = true;
@@ -24,7 +23,6 @@ const displayScreen= document.querySelector("#screenInput")
 const counter= document.querySelector("#inputCounter")
 
 // adding eventListener for each button
-
 green.addEventListener('click', ()=> {
     // console.log("green clicked")
     
@@ -37,10 +35,8 @@ blue.addEventListener('click', ()=> {
    
 })
 yellow.addEventListener('click', ()=> {
-    // console.log("yellow clicked")
-   
+    // console.log("yellow clicked")  
 })
-
 
 reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
@@ -51,20 +47,23 @@ reset.addEventListener('click', ()=> {
     startGame = false;
 })
 
-
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
         displayScreen.innerHTML ="Start the Game"
         counter.innerHTML = "level 0";
         player = [];
-        simonChoice = [];
-        getSelectedColor()      
+        getSelectedColor();
+   
 })
 
-// function for selecting random color
+// level screen display 
+// function level(){
+//     counter.innerHTML = level; 
+// }
 
+// function for selecting random color
 function getSelectedColor(){
-    let colorSelected =  arrayColors[Math.floor(Math.random() * 4)]
+    let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
     //  console.log(colorSelected)
     simonChoice.push(colorSelected)
     // console.log(simonChoice)
@@ -72,7 +71,7 @@ function getSelectedColor(){
 }
 // getSelectedColor()
 
-// function of simon slection
+// function of simon selection
 function simonSelections(){    
     simonChoice.forEach((colorSelected, i) => {
     setTimeout(()=>{
@@ -82,40 +81,41 @@ function simonSelections(){
                 // console.log(simonChoice[i])
                 setTimeout(()=>
                 {
-                    green.style.background = "springgreen"
-                } ,500)
-                
+                green.style.background = "springgreen"
+                } ,200)
             }
-            else if(simonChoice[i] === arrayColors[1]){
+            if(simonChoice[i] === arrayColors[1]){
                 red.style.background = "red";
                 // console.log(simonChoice[i])
                 setTimeout(()=>
                 {
                     red.style.background = "tomato"
-                } ,500)
+                } ,200)
             }
-            else if (simonChoice[i] === arrayColors[2]){
+            if (simonChoice[i] === arrayColors[2]){
                 yellow.style.background = "yellow";
-                // console.log(simonChoice[i])
+                //  console.log(simonChoice[i])
                 setTimeout(()=>
                 {
-                    yellow.style.background = "lightyellow"
-                } ,500)
+                    yellow.style.backgroundColor  = "lightyellow"
+                } ,200)
             }
-            else if (simonChoice[i] === arrayColors[3]){
+            if (simonChoice[i] === arrayColors[3]){
                 blue.style.background = "blue";
-                // console.log(simonChoice[i])
+                console.log(simonChoice[i])
                 setTimeout(()=>
                 {
-                    blue.style.background = "lightskyblue"
-                } ,500)
+                    blue.style.backgroundColor = "lightskyblue"
+                } ,200)
             }
-        else {
-
-            displayScreen.innerText = "Click the right button to start the game"
-        }
         }  
-    }, 500 * i )
+    }, 500 * i)
     })
 }
 
+// // player vs simon selection 
+// function playerSelection(){
+//     if(player[] === arrayColors[] && player[] === simonChoice[]){
+
+//     }
+// }
