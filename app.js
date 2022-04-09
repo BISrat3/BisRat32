@@ -50,16 +50,24 @@ reset.addEventListener('click', ()=> {
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
         displayScreen.innerHTML ="Start the Game"
-        counter.innerHTML = "level 0";
+        // counter.innerHTML = "level 0";
         player = [];
         getSelectedColor();
+        levelDisplay();
    
 })
 
 // level screen display 
-// function level(){
-//     counter.innerHTML = level; 
-// }
+function levelDisplay(){
+    level = Math.min(level +=1);
+    if(level < 19){
+        counter.innerHTML = "Level - " + level; 
+    }
+    else if (level <= 20){
+        counter.innerHTML= "Final level"
+    }
+        return;
+}
 
 // function for selecting random color
 function getSelectedColor(){

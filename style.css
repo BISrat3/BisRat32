@@ -177,9 +177,7 @@ h1{
 /* * score division  */  
 .score, #inputCounter{
     align-items:  center;
-    font-size: 40px;
-    
-
+    font-size: 30px;
 }
 #inputCounter{
     width: 200px;
