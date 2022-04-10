@@ -1,11 +1,12 @@
-// Defining variables/ declaring valriables
+// ------- declaring valriable ---------//
 let player = [];
 let simonChoice = [];
 const arrayColors = ['green','red','yellow','blue'];
 let winner;
 let level =0;
-let startGame = true;
+let startGame = false;
 
+// ------- query selection elements ---------//
 const green = document.querySelector('.greenBtn')
 // console.log(green)
 const red = document.querySelector('.redBtn')
@@ -22,22 +23,42 @@ const displayScreen= document.querySelector("#screenInput")
 
 const counter= document.querySelector("#inputCounter")
 
-// adding eventListener for each button
+//--- adding eventListener for each button ---------//
 green.addEventListener('click', ()=> {
     // console.log("green clicked")
-    
+    startGame = true;
+    green.classList.add('green')
+    player.push('green')
+    console.log(player)
+    // playerSelection()
 })
 red.addEventListener('click', ()=> {
     // console.log("red clicked")
+    startGame = true;
+    red.classList.add('red')
+    player.push('red')
+    console.log(player)
+    // playerSelection()
 })
 blue.addEventListener('click', ()=> {
     // console.log("blue clicked")
+    startGame = true;
+    blue.classList.add('blue')
+    player.push('blue')
+    console.log(player)
+    // playerSelection()
    
 })
 yellow.addEventListener('click', ()=> {
-    // console.log("yellow clicked")  
+    // console.log("yellow clicked")
+    startGame = true;
+    yellow.classList.add('yellow')
+    player.push('yellow')
+    console.log(player)
+    playerSelection()
 })
 
+//--- Reset button functionality    ---------//
 reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
     displayScreen.innerHTML =""
@@ -47,43 +68,65 @@ reset.addEventListener('click', ()=> {
     startGame = false;
 })
 
+//--- Start button functionality  ---------//
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
         displayScreen.innerHTML ="Start the Game"
         // counter.innerHTML = "level 0";
+        startGame = true;
+        player = [];
         player = [];
         getSelectedColor();
         levelDisplay();
-   
+        
 })
 
-// level screen display 
+ // --------------- Level of the game --------------------//
+ 
 function levelDisplay(){
-    level = Math.min(level +=1);
-    if(level < 19){
-        counter.innerHTML = "Level - " + level; 
+    level = Math.min(level +=1, 16);
+    if (startGame === true && level <=16){
+        // getSelectedColor()
+        
+        if(level <= 15){
+            counter.innerHTML = "Level - " + level; 
+        }
+        else if (level === 16){
+            counter.innerHTML= "Final level"
+        }    
     }
-    else if (level <= 20){
-        counter.innerHTML= "Final level"
+    else if(counter.innerHTML = "Final level") {
+        if(startGame === false){
+            gameOver();
+        }
+
     }
-        return;
 }
 
-// function for selecting random color
+
+// --------------- Game Over Function --------------------//
+function gameOver(){
+    counter.innerHTML =""
+    displayScreen.innerHTML ="Game Over"
+    startGame = false;
+
+}
+// --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
     //  console.log(colorSelected)
     simonChoice.push(colorSelected)
     // console.log(simonChoice)
     simonSelections()
+    playerSelection()
 }
 // getSelectedColor()
 
-// function of simon selection
+// --------------- function of simon selection--------------------//
 function simonSelections(){    
     simonChoice.forEach((colorSelected, i) => {
     setTimeout(()=>{
-        if (startGame = true){
+        if (startGame === true){
             if(simonChoice[i] === arrayColors[0]){
                 green.style.background = "green";
                 // console.log(simonChoice[i])
@@ -121,9 +164,14 @@ function simonSelections(){
     })
 }
 
-// // player vs simon selection 
-// function playerSelection(){
-//     if(player[] === arrayColors[] && player[] === simonChoice[]){
+// // --------- player vs simon function comparsion-------------------//
 
+// function playerSelection(){
+    
+//     if(player.length === simonChoice.length && player.every((i) => value === simonChoice[i])){
+//         displayScreen.innerHTML ="Proceed to the next level"
+//         getSelectedColor()
+        
 //     }
 // }
+// playerSelection()
