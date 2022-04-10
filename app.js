@@ -71,13 +71,18 @@ reset.addEventListener('click', ()=> {
 //--- Start button functionality  ---------//
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
+    if( startGame = true){
         displayScreen.innerHTML ="Start the Game"
         // counter.innerHTML = "level 0";
         start.style.background ="green"
+        start.style.color ="white"
         startGame = true;
         player = [];
         getSelectedColor();
         levelDisplay();
+    }
+        
+        // playerSelection()
         
 })
 
@@ -91,15 +96,14 @@ function levelDisplay(){
             counter.innerHTML = "Level - " + level; 
         }
         else if (level === 16){
+            
             counter.innerHTML= "Final level"
         }    
+        
     }
-    // else if(counter.innerHTML = "Final level") {
-    //     if(startGame === false){
-    //         gameOver();
-    //     }
-
-    // }
+    else if(level >= 17){
+        startGame = false;
+    }
 }
 
 
@@ -113,9 +117,9 @@ function gameOver(){
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
-    //  console.log(colorSelected)
+    // console.log(colorSelected)
     simonChoice.push(colorSelected)
-    // console.log(simonChoice)
+     console.log(simonChoice)
     simonSelections()
     // playerSelection()
 }
@@ -127,32 +131,32 @@ function simonSelections(){
     setTimeout(()=>{
         if (startGame === true){
             if(simonChoice[i] === arrayColors[0]){
-                green.style.background = "green";
-                // console.log(simonChoice[i])
+                green.style.backgroundColor = "green";
+                //  console.log(simonChoice[i])
                 setTimeout(()=>
                 {
-                green.style.background = "springgreen"
+                green.style.backgroundColor = "springgreen"
                 } ,200)
             }
-            if(simonChoice[i] === arrayColors[1]){
-                red.style.background = "red";
-                // console.log(simonChoice[i])
+            else if(simonChoice[i] === arrayColors[1]){
+                red.style.backgroundColor = "red";
+                //  console.log(simonChoice[i])
                 setTimeout(()=>
                 {
-                    red.style.background = "tomato"
+                    red.style.backgroundColor = "tomato"
                 } ,200)
             }
-            if (simonChoice[i] === arrayColors[2]){
-                yellow.style.background = "yellow";
+            else if (simonChoice[i] === arrayColors[2]){
+                yellow.style.backgroundColor = "yellow";
                 //  console.log(simonChoice[i])
                 setTimeout(()=>
                 {
                     yellow.style.backgroundColor  = "lightyellow"
                 } ,200)
             }
-            if (simonChoice[i] === arrayColors[3]){
-                blue.style.background = "blue";
-                console.log(simonChoice[i])
+            else if (simonChoice[i] === arrayColors[3]){
+                blue.style.backgroundColor = "blue";
+                //  console.log(simonChoice[i])
                 setTimeout(()=>
                 {
                     blue.style.backgroundColor = "lightskyblue"
@@ -165,12 +169,19 @@ function simonSelections(){
 
 // // --------- player vs simon function comparsion-------------------//
 
-// function playerSelection(){
-    
-//     if(player.length === simonChoice.length && player.every((i) => value === simonChoice[i])){
-//         displayScreen.innerHTML ="Proceed to the next level"
-//         getSelectedColor()
-        
-//     }
-// }
-// playerSelection()
+function playerSelection(){
+    if(startGame === true){
+        if(player.length === simonChoice.length && player.every((arrayColors) => arrayColors === simonChoice[i]))
+        {
+            displayScreen.innerHTML ="Proceed to the next level"
+            getSelectedColor()
+            console.log("Correct")
+        }
+        else{
+            console.log("Wrong click")
+        }
+    }
+   
+    // simonSelections()
+}
+playerSelection()
