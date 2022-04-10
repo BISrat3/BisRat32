@@ -55,7 +55,7 @@ yellow.addEventListener('click', ()=> {
     yellow.classList.add('yellow')
     player.push('yellow')
     console.log(player)
-    playerSelection()
+    // playerSelection()
 })
 
 //--- Reset button functionality    ---------//
@@ -73,8 +73,8 @@ start.addEventListener('click', ()=> {
     // console.log("start clicked")
         displayScreen.innerHTML ="Start the Game"
         // counter.innerHTML = "level 0";
+        start.style.background ="green"
         startGame = true;
-        player = [];
         player = [];
         getSelectedColor();
         levelDisplay();
@@ -85,9 +85,8 @@ start.addEventListener('click', ()=> {
  
 function levelDisplay(){
     level = Math.min(level +=1, 16);
-    if (startGame === true && level <=16){
+    if (startGame === true){
         // getSelectedColor()
-        
         if(level <= 15){
             counter.innerHTML = "Level - " + level; 
         }
@@ -95,12 +94,12 @@ function levelDisplay(){
             counter.innerHTML= "Final level"
         }    
     }
-    else if(counter.innerHTML = "Final level") {
-        if(startGame === false){
-            gameOver();
-        }
+    // else if(counter.innerHTML = "Final level") {
+    //     if(startGame === false){
+    //         gameOver();
+    //     }
 
-    }
+    // }
 }
 
 
@@ -118,7 +117,7 @@ function getSelectedColor(){
     simonChoice.push(colorSelected)
     // console.log(simonChoice)
     simonSelections()
-    playerSelection()
+    // playerSelection()
 }
 // getSelectedColor()
 

@@ -1,10 +1,12 @@
 *{
     margin: 0px auto;
     width: 0px auto;
+    height: 0px auto;
 }
 /* body style */
 body{
     background-color:darkslategray;
+    
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
    
 }
@@ -21,31 +23,36 @@ h1{
     font-size: 80px;
 }
 /* body section  */
-.bsection{
+.sectionOne{
     align-items:  center;
-    font-size: 40px;
-    color:cadetblue;
-
+    font-size: 20px;
+    color:midnightblue;
 }
 /* gamebored screen */
 .screenBoard{
     align-items:  center;
     text-align: center;
-    font-size: 40px;
-    width: 300px;
-    height: 400px;
-    margin-right: 5%;
-    border-radius: 100px 30px;
+    font-size: 30px;
+    width: 250px;
+    height: 300px;
+    margin-right: 20%;
+    border-radius: 90px 30px;
     border:10px solid red;
-    
+}
+h2{
+    margin-top: 10px;;
+    text-align: center;
+    font-size: 30px;
+    color:cornflowerblue;
 }
 #screenBoard, textarea{
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
-    margin-top: 40px;
-    width:200px;
-    height:200px;
-    background-color: cadetblue;
+    margin-top: 15px;
+    width:230px;
+    height:180px;
+    padding: 15px 5px;
+    background-color:lightblue;
     border-radius: 10px;
     border-top-left-radius: 30%;
     border-bottom-right-radius: 30%;
@@ -59,6 +66,7 @@ h1{
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    border: 10px;
     /* padding-top: 5px ; */
     background-color:darkturquoise;
     /* justify-content: space-between; */
@@ -114,16 +122,19 @@ h1{
 }
 /* * start Button  */  
 .startBtn{
-    width: 100px;
-    height: 100px;
-    background-color:lawngreen;
+    width: 150px;
+    height: 150px;
+    background-color:black;
     border-radius: 50%;
+    /* border: 10px solid; */
     align-self: center;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    margin-left: 200px;
-    /* margin: 30px 30px; */
-    
+    margin-left: 175px;
+    font-size: 40px;
+    color:cornflowerblue;
 }
 /* * Yellow button  */ 
 .yellowBtn{
@@ -167,39 +178,45 @@ h1{
     background-color:darkblue;
 }
 
-/* * display division  */  
+/* * Level and Reset Section   */  
 .display{
-    align-items:  center;
     display: flex;
-    margin: 0px 30px;
+    margin: -50px 20px;
+    justify-content: center;
+    text-align: center;
 
 }
-/* * score division  */  
+/* * Level division  */  
 .score, #inputCounter{
     align-items:  center;
-    font-size: 30px;
+    font-size: 25px;
+    color: whitesmoke;
 }
 #inputCounter{
     width: 200px;
-    height: 50px;
+    height: 45px;
     border-radius: 10px;
     margin-top: 0px;
-}
-/* * score division  */  
-.restart{
-    align-items:  center;
-    font-size: 40;
+    border: 2px solid skyblue;
+    background-color:dodgerblue;
+    color: whitesmoke;
 }
 
+/* * score division  */  
+.restart{
+    display: flex;
+    justify-content: center;
+}
 
 /* * reset button  */  
 .resetBtn{
-    align-items:  center;
-    font-size: 40;
-    border-radius: 60px;
-    width: 100px;
+    font-size: 30px;
+    border-radius: 80px;
+    border: 2px solid skyblue;
+    width: 140px;
     height: 50px;
-    background-color:darkgray;
+    background-color:red;
+    color: whitesmoke;
     
 }
 
