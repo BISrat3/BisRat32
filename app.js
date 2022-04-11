@@ -61,11 +61,12 @@ yellow.addEventListener('click', ()=> {
 //--- Reset button functionality    ---------//
 reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
+    startGame = false;
     displayScreen.innerHTML =""
     counter.innerHTML = "";
     player = [];
     simonChoice = [];
-    startGame = false;
+  
 })
 
 //--- Start button functionality  ---------//
@@ -76,7 +77,6 @@ start.addEventListener('click', ()=> {
         // counter.innerHTML = "level 0";
         start.style.background ="green"
         start.style.color ="white"
-        startGame = true;
         player = [];
         getSelectedColor();
         levelDisplay();
@@ -89,21 +89,21 @@ start.addEventListener('click', ()=> {
  // --------------- Level of the game --------------------//
  
 function levelDisplay(){
-    level = Math.min(level +=1, 16);
+    // level = Math.min(level +=1);
     if (startGame === true){
-        // getSelectedColor()
-        if(level <= 15){
+        level ++;
+       if(level < 15){
             counter.innerHTML = "Level - " + level; 
         }
-        else if (level === 16){
-            
+       else if (level <= 16){ 
             counter.innerHTML= "Final level"
-        }    
-        
-    }
-    else if(level >= 17){
-        startGame = false;
-    }
+        }       
+       else if (level === 17){
+            start.setAttribute("disabled", true);
+            counter.innerHTML ="You win the Game"
+            displayScreen.innerHTML = 'Game is over'
+        }  
+    }   
 }
 
 
@@ -112,6 +112,7 @@ function gameOver(){
     counter.innerHTML =""
     displayScreen.innerHTML ="Game Over"
     startGame = false;
+    
 
 }
 // --------------- Function for selecting random color--------------------//
@@ -119,7 +120,7 @@ function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
     // console.log(colorSelected)
     simonChoice.push(colorSelected)
-     console.log(simonChoice)
+    console.log(simonChoice)
     simonSelections()
     // playerSelection()
 }
@@ -127,6 +128,7 @@ function getSelectedColor(){
 
 // --------------- function of simon selection--------------------//
 function simonSelections(){    
+    
     simonChoice.forEach((colorSelected, i) => {
     setTimeout(()=>{
         if (startGame === true){
@@ -167,7 +169,7 @@ function simonSelections(){
     })
 }
 
-// // --------- player vs simon function comparsion-------------------//
+// // // --------- player vs simon function comparsion-------------------//
 
 function playerSelection(){
     if(startGame === true){
@@ -184,4 +186,4 @@ function playerSelection(){
    
     // simonSelections()
 }
-playerSelection()
+// playerSelection()
