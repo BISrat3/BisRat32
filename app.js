@@ -19,11 +19,16 @@ const blue = document.querySelector('.blueBtn')
 // console.log(blue)
 const reset = document.querySelector('.resetBtn')
 // console.log(reset)
-const displayScreen= document.querySelector("#screenInput")
+const displayScreen = document.querySelector("#screenInput")
+const allButton = document.getElementById('buttons')
 
 const counter= document.querySelector("#inputCounter")
 
 //--- adding eventListener and functionality for each button ---------//
+allButton.addEventListener('click', ()=>{
+    console.log(allButton)
+})
+
 green.addEventListener('click', ()=> {
     // console.log("green clicked")
     startGame = true;
@@ -168,6 +173,7 @@ function simonSelections(){
                     } ,150)
                 }
             }  
+            displayScreen.innerHTML = "Players turn"
         }, 500 * i)
     })
    
@@ -180,12 +186,14 @@ function playerSelection(){
     if(startGame === true){
             if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
                 // displayScreen.innerHTML ="Proceed to the next level"
-                
+                winner();
                 console.log("Correct")
             }
-            else 
+            else
                 {
+                // start.setAttribute("disabled", true);
                 console.log("Wrong click")
+                lose();
            }
         }
 },10000)
@@ -210,4 +218,22 @@ function levelDisplay(){
                 displayScreen.innerHTML = 'Game is over'
             }  
         }   
+}
+
+//----------- Winner Function -----------------//
+function winner(){
+    displayScreen.innerHTML ="You win the " + level + " level. Press start to coninue the game";
+    // start.setAttribute("enable", false);
+}
+
+// ----------- Lose Function------------------//
+function lose(){
+    displayScreen.innerHTML ="You lose the game";
+    start.setAttribute("disabled", true);
+    allButton.setAttribute('disabled', true)
+}
+
+///
+function disableButtons(){
+    // allButton.setAttribute('disable', true)
 }
