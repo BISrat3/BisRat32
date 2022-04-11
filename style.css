@@ -13,8 +13,9 @@ body{
 /* header style */
 .header{
     text-align: center;
-    font-size: 40px;
-    color: cadetblue;
+    font-size: 48px;
+    color: maroon;
+    font-family:"https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;1,300&display=swap";
 }
 /* h1 style */
 h1{
@@ -216,7 +217,7 @@ h2{
     height: 50px;
     background-color:red;
     color: whitesmoke;
-    
+    margin: 10px 10px;
 }
 
 /* * footer division  */  

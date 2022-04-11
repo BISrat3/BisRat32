@@ -66,7 +66,9 @@ reset.addEventListener('click', ()=> {
     counter.innerHTML = "";
     player = [];
     simonChoice = [];
-  
+    displayScreen.innerHTML ="Press Start Button to begin the Game"
+    start.style.background = "black";
+    start.style.color = "cornflowerblue";
 })
 
 //--- Start button functionality  ---------//
@@ -78,12 +80,10 @@ start.addEventListener('click', ()=> {
         start.style.background ="green"
         start.style.color ="white"
         player = [];
-        getSelectedColor();
         levelDisplay();
-    }
-        
-        // playerSelection()
-        
+        getSelectedColor();
+    }  
+        // playerSelection()   
 })
 
  // --------------- Level of the game --------------------//
@@ -92,13 +92,14 @@ function levelDisplay(){
     // level = Math.min(level +=1);
     if (startGame === true){
         level ++;
-       if(level < 15){
+       if(level <=15){
             counter.innerHTML = "Level - " + level; 
         }
        else if (level <= 16){ 
             counter.innerHTML= "Final level"
         }       
-       else if (level === 17){
+       else if (level >16){  
+            simonChoice = [];
             start.setAttribute("disabled", true);
             counter.innerHTML ="You win the Game"
             displayScreen.innerHTML = 'Game is over'
@@ -106,20 +107,24 @@ function levelDisplay(){
     }   
 }
 
-
 // --------------- Game Over Function --------------------//
 function gameOver(){
     counter.innerHTML =""
     displayScreen.innerHTML ="Game Over"
     startGame = false;
-    
-
 }
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
+    // simonChoice.push(colorSelected)
     // console.log(colorSelected)
-    simonChoice.push(colorSelected)
+    if(level<=16){
+        simonChoice.push(colorSelected)
+    }
+    else{
+        simonChoice.pop(colorSelected)
+    }
+    
     console.log(simonChoice)
     simonSelections()
     // playerSelection()
@@ -146,7 +151,7 @@ function simonSelections(){
                 setTimeout(()=>
                 {
                     red.style.backgroundColor = "tomato"
-                } ,200)
+                } ,100)
             }
             else if (simonChoice[i] === arrayColors[2]){
                 yellow.style.backgroundColor = "yellow";
@@ -154,7 +159,7 @@ function simonSelections(){
                 setTimeout(()=>
                 {
                     yellow.style.backgroundColor  = "lightyellow"
-                } ,200)
+                } ,100)
             }
             else if (simonChoice[i] === arrayColors[3]){
                 blue.style.backgroundColor = "blue";
@@ -171,19 +176,19 @@ function simonSelections(){
 
 // // // --------- player vs simon function comparsion-------------------//
 
-function playerSelection(){
-    if(startGame === true){
-        if(player.length === simonChoice.length && player.every((arrayColors) => arrayColors === simonChoice[i]))
-        {
-            displayScreen.innerHTML ="Proceed to the next level"
-            getSelectedColor()
-            console.log("Correct")
-        }
-        else{
-            console.log("Wrong click")
-        }
-    }
+// function playerSelection(){
+//     if(startGame === true){
+//         if(player.length === simonChoice.length && player.every((arrayColors) => arrayColors === simonChoice[i]))
+//         {
+//             displayScreen.innerHTML ="Proceed to the next level"
+//             getSelectedColor()
+//             console.log("Correct")
+//         }
+//         else{
+//             console.log("Wrong click")
+//         }
+//     }
    
-    // simonSelections()
-}
+//     // simonSelections()
+// }
 // playerSelection()
