@@ -27,24 +27,36 @@ const counter= document.querySelector("#inputCounter")
 green.addEventListener('click', ()=> {
     // console.log("green clicked")
     startGame = true;
-    green.classList.add('green')
+    green.style.backgroundColor = "green";
     player.push('green')
+    setTimeout(()=>
+    {
+        green.style.backgroundColor = "springgreen"
+    } ,200)
     console.log(player)
     // playerSelection()
 })
 red.addEventListener('click', ()=> {
     // console.log("red clicked")
     startGame = true;
-    red.classList.add('red')
+    red.style.backgroundColor = "red";
     player.push('red')
+    setTimeout(()=>
+    {
+        red.style.backgroundColor = "tomato"
+    } ,100)
     console.log(player)
     // playerSelection()
 })
 blue.addEventListener('click', ()=> {
     // console.log("blue clicked")
     startGame = true;
-    blue.classList.add('blue')
+    blue.style.backgroundColor = "blue";
     player.push('blue')
+    setTimeout(()=>
+    {
+        blue.style.backgroundColor  = "lightskyblue"
+    } ,100)
     console.log(player)
     // playerSelection()
    
@@ -52,8 +64,12 @@ blue.addEventListener('click', ()=> {
 yellow.addEventListener('click', ()=> {
     // console.log("yellow clicked")
     startGame = true;
-    yellow.classList.add('yellow')
+    yellow.style.backgroundColor = "yellow";
     player.push('yellow')
+    setTimeout(()=>
+    {
+        yellow.style.backgroundColor = "lightyellow"
+    } ,200)
     console.log(player)
     // playerSelection()
 })
@@ -88,6 +104,7 @@ start.addEventListener('click', ()=> {
 
 
 
+
 // --------------- Game Over Function --------------------//
 function gameOver(){
     counter.innerHTML =""
@@ -105,10 +122,9 @@ function getSelectedColor(){
     else{
         simonChoice.pop(colorSelected)
     }
-    
+    playerSelection()
     console.log(simonChoice)
     simonSelections()
-    // playerSelection()
 }
 // getSelectedColor()
 
@@ -132,7 +148,7 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         red.style.backgroundColor = "tomato"
-                    } ,100)
+                    } ,200)
                 }
                 else if (simonChoice[i] === arrayColors[2]){
                     yellow.style.backgroundColor = "yellow";
@@ -140,7 +156,7 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         yellow.style.backgroundColor  = "lightyellow"
-                    } ,100)
+                    } ,200)
                 }
                 else if (simonChoice[i] === arrayColors[3]){
                     blue.style.backgroundColor = "blue";
@@ -155,6 +171,22 @@ function simonSelections(){
     })
 }
 
+ // // // --------- player vs simon function comparsion-------------------//
+
+function playerSelection(){
+    if(startGame === true){
+        if(player.length === simonChoice.length){
+            if(player.every((value, i) => value === simonChoice[i]))
+            displayScreen.innerHTML ="Proceed to the next level"
+            console.log("Correct")
+        }
+        else{
+             console.log("Wrong click")
+        }
+    }
+   
+    // simonSelections()
+}
 // --------------- Level of the game --------------------//
 function levelDisplay(){
     // level = Math.min(level +=1);
@@ -174,21 +206,6 @@ function levelDisplay(){
             }  
         }   
 }
-    // // // --------- player vs simon function comparsion-------------------//
-    
-// function playerSelection(){
-//     if(startGame === true){
-//         if(player.length === simonChoice.length && player.every((arrayColors) => arrayColors === simonChoice[i]))
-//         {
-//             displayScreen.innerHTML ="Proceed to the next level"
-//             getSelectedColor()
-//             console.log("Correct")
-//         }
-//         else{
-//             console.log("Wrong click")
-//         }
-//     }
    
-//     // simonSelections()
-// }
+    
 // playerSelection()
