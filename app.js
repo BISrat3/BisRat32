@@ -86,26 +86,7 @@ start.addEventListener('click', ()=> {
         // playerSelection()   
 })
 
- // --------------- Level of the game --------------------//
- 
-function levelDisplay(){
-    // level = Math.min(level +=1);
-    if (startGame === true){
-        level ++;
-       if(level <=15){
-            counter.innerHTML = "Level - " + level; 
-        }
-       else if (level <= 16){ 
-            counter.innerHTML= "Final level"
-        }       
-       else if (level >16){  
-            simonChoice = [];
-            start.setAttribute("disabled", true);
-            counter.innerHTML ="You win the Game"
-            displayScreen.innerHTML = 'Game is over'
-        }  
-    }   
-}
+
 
 // --------------- Game Over Function --------------------//
 function gameOver(){
@@ -135,47 +116,66 @@ function getSelectedColor(){
 function simonSelections(){    
     
     simonChoice.forEach((colorSelected, i) => {
-    setTimeout(()=>{
-        if (startGame === true){
-            if(simonChoice[i] === arrayColors[0]){
-                green.style.backgroundColor = "green";
-                //  console.log(simonChoice[i])
-                setTimeout(()=>
-                {
-                green.style.backgroundColor = "springgreen"
-                } ,200)
-            }
-            else if(simonChoice[i] === arrayColors[1]){
-                red.style.backgroundColor = "red";
-                //  console.log(simonChoice[i])
-                setTimeout(()=>
-                {
-                    red.style.backgroundColor = "tomato"
-                } ,100)
-            }
-            else if (simonChoice[i] === arrayColors[2]){
-                yellow.style.backgroundColor = "yellow";
-                //  console.log(simonChoice[i])
-                setTimeout(()=>
-                {
-                    yellow.style.backgroundColor  = "lightyellow"
-                } ,100)
-            }
-            else if (simonChoice[i] === arrayColors[3]){
-                blue.style.backgroundColor = "blue";
-                //  console.log(simonChoice[i])
-                setTimeout(()=>
-                {
-                    blue.style.backgroundColor = "lightskyblue"
-                } ,200)
-            }
-        }  
-    }, 500 * i)
+        setTimeout(()=>{
+            if (startGame === true){
+                if(simonChoice[i] === arrayColors[0]){
+                    green.style.backgroundColor = "green";
+                    //  console.log(simonChoice[i])
+                    setTimeout(()=>
+                    {
+                        green.style.backgroundColor = "springgreen"
+                    } ,200)
+                }
+                else if(simonChoice[i] === arrayColors[1]){
+                    red.style.backgroundColor = "red";
+                    //  console.log(simonChoice[i])
+                    setTimeout(()=>
+                    {
+                        red.style.backgroundColor = "tomato"
+                    } ,100)
+                }
+                else if (simonChoice[i] === arrayColors[2]){
+                    yellow.style.backgroundColor = "yellow";
+                    //  console.log(simonChoice[i])
+                    setTimeout(()=>
+                    {
+                        yellow.style.backgroundColor  = "lightyellow"
+                    } ,100)
+                }
+                else if (simonChoice[i] === arrayColors[3]){
+                    blue.style.backgroundColor = "blue";
+                    //  console.log(simonChoice[i])
+                    setTimeout(()=>
+                    {
+                        blue.style.backgroundColor = "lightskyblue"
+                    } ,200)
+                }
+            }  
+        }, 500 * i)
     })
 }
 
-// // // --------- player vs simon function comparsion-------------------//
-
+// --------------- Level of the game --------------------//
+function levelDisplay(){
+    // level = Math.min(level +=1);
+    if (startGame === true){
+            level ++;
+           if(level <=15){
+                counter.innerHTML = "Level - " + level; 
+            }
+           else if (level <= 16){ 
+                counter.innerHTML= "Final level"
+            }       
+           else if (level >16){  
+                simonChoice = [];
+                start.setAttribute("disabled", true);
+                counter.innerHTML ="You win the Game"
+                displayScreen.innerHTML = 'Game is over'
+            }  
+        }   
+}
+    // // // --------- player vs simon function comparsion-------------------//
+    
 // function playerSelection(){
 //     if(startGame === true){
 //         if(player.length === simonChoice.length && player.every((arrayColors) => arrayColors === simonChoice[i]))
