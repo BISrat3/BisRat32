@@ -2,7 +2,7 @@
 let player = [];
 let simonChoice = [];
 const arrayColors = ['green','red','yellow','blue'];
-let winner;
+// let winner;
 let level =0;
 let startGame = false;
 
@@ -23,7 +23,7 @@ const displayScreen= document.querySelector("#screenInput")
 
 const counter= document.querySelector("#inputCounter")
 
-//--- adding eventListener for each button ---------//
+//--- adding eventListener and functionality for each button ---------//
 green.addEventListener('click', ()=> {
     // console.log("green clicked")
     startGame = true;
@@ -32,7 +32,7 @@ green.addEventListener('click', ()=> {
     setTimeout(()=>
     {
         green.style.backgroundColor = "springgreen"
-    } ,200)
+    } ,100)
     console.log(player)
     // playerSelection()
 })
@@ -69,7 +69,8 @@ yellow.addEventListener('click', ()=> {
     setTimeout(()=>
     {
         yellow.style.backgroundColor = "lightyellow"
-    } ,200)
+    } ,100)
+    // startGame =false;
     console.log(player)
     // playerSelection()
 })
@@ -130,7 +131,7 @@ function getSelectedColor(){
 
 // --------------- function of simon selection--------------------//
 function simonSelections(){    
-    
+   
     simonChoice.forEach((colorSelected, i) => {
         setTimeout(()=>{
             if (startGame === true){
@@ -140,7 +141,7 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         green.style.backgroundColor = "springgreen"
-                    } ,200)
+                    } ,150)
                 }
                 else if(simonChoice[i] === arrayColors[1]){
                     red.style.backgroundColor = "red";
@@ -148,7 +149,7 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         red.style.backgroundColor = "tomato"
-                    } ,200)
+                    } , 150)
                 }
                 else if (simonChoice[i] === arrayColors[2]){
                     yellow.style.backgroundColor = "yellow";
@@ -156,7 +157,7 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         yellow.style.backgroundColor  = "lightyellow"
-                    } ,200)
+                    } ,150)
                 }
                 else if (simonChoice[i] === arrayColors[3]){
                     blue.style.backgroundColor = "blue";
@@ -164,27 +165,31 @@ function simonSelections(){
                     setTimeout(()=>
                     {
                         blue.style.backgroundColor = "lightskyblue"
-                    } ,200)
+                    } ,150)
                 }
             }  
         }, 500 * i)
     })
+   
 }
 
  // // // --------- player vs simon function comparsion-------------------//
 
 function playerSelection(){
+    setTimeout(()=>{
     if(startGame === true){
-        if(player.length === simonChoice.length){
-            if(player.every((value, i) => value === simonChoice[i]))
-            displayScreen.innerHTML ="Proceed to the next level"
-            console.log("Correct")
+            if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
+                // displayScreen.innerHTML ="Proceed to the next level"
+                
+                console.log("Correct")
+            }
+            else 
+                {
+                console.log("Wrong click")
+           }
         }
-        else{
-             console.log("Wrong click")
-        }
-    }
-   
+},10000)
+
     // simonSelections()
 }
 // --------------- Level of the game --------------------//
@@ -206,6 +211,3 @@ function levelDisplay(){
             }  
         }   
 }
-   
-    
-// playerSelection()
