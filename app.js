@@ -98,7 +98,8 @@ start.addEventListener('click', ()=> {
     
     if( startGame = true){
         displayScreen.innerHTML ="Start the Game"
-        // counter.innerHTML = "level 0";
+        level ++; 
+        counter.innerHTML = "Level - " + level;
         start.style.background ="green"
         start.style.color ="white"
         player = [];
@@ -187,45 +188,70 @@ function simonSelections(){
  // // // --------- player vs simon function comparsion-------------------//
 
 function playerSelection(){
-    setTimeout(()=>{
+setTimeout(()=>{
     if(startGame === true){
-            if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
-                // displayScreen.innerHTML ="Proceed to the next level"
-                winner();
-                levelDisplay()
-                console.log("Correct")
-            }
-            else
-                {
-                // start.setAttribute("disabled", true);
-                console.log("Wrong click")
-                lose();
-           }
-        }
-},3000)
-
-    // simonSelections()
-}
-// --------------- Level of the game --------------------//
-function levelDisplay(){
-    // level = Math.min(level +=1);
-    if (startGame === true){
-            level ++;
-            setTimeout
-           if(level <=5){
-                counter.innerHTML = "Level - " + level; 
-            }
-           else if (level <= 16){ 
-                counter.innerHTML= "Final level"
-            }       
-           else if (level >16){  
+    
+        if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
+            // displayScreen.innerHTML ="Proceed to the next level"
+            setTimeout(()=>{
+                if(level <=5){
+                    counter.innerHTML = "Level - " + level; 
+                }
+            },700)
+            setTimeout(()=>{
+                if(level <=10 ){
+                    counter.innerHTML = "Level - " + level; 
+                }
+            },1500)
+            setTimeout(()=>{
+                if(level <=16 ){
+                    counter.innerHTML = "Level - " + level; 
+                }
+            },2000)
+            setTimeout(()=>{
+               if (level >16){  
                 simonChoice = [];
                 start.setAttribute("disabled", true);
                 counter.innerHTML ="You win the Game"
                 displayScreen.innerHTML = 'Game is over'
             }  
-        }   
+            },20000)
+            // levelDisplay()
+            console.log("Correct")
+            // level++;
+            winner();
+        }
+        else
+            {
+            // start.setAttribute("disabled", true);
+            console.log("Wrong click")
+            lose();
+    }
 }
+},100000)
+
+    // simonSelections()
+}
+// --------------- Level of the game --------------------//
+// function levelDisplay(){
+// // level = Math.min(level +=1);
+// if (startGame === true){
+//         level ++;
+    
+//         if(level <=15){
+//             counter.innerHTML = "Level - " + level; 
+//         }
+//         else if (level <= 16){ 
+//             counter.innerHTML= "Final level"
+//         }       
+//         else if (level >16){  
+//             simonChoice = [];
+//             start.setAttribute("disabled", true);
+//             counter.innerHTML ="You win the Game"
+//             displayScreen.innerHTML = 'Game is over'
+//         }  
+//     }   
+// }
 
 //----------- Winner Function -----------------//
 function winner(){
