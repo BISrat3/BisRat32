@@ -20,16 +20,15 @@ const blue = document.querySelector('.blueBtn')
 const reset = document.querySelector('.resetBtn')
 // console.log(reset)
 const displayScreen = document.querySelector("#screenInput")
-const allButton = document.getElementById('buttons')
-
+const allButton = document.querySelectorAll('#buttons')
+console.log(allButton)
 const counter= document.querySelector("#inputCounter")
 
 //--- adding eventListener and functionality for each button ---------//
-allButton.addEventListener('click', ()=>{
-    console.log(allButton)
-})
+// allButton.addEventListener('click', disableButtons)
 
-green.addEventListener('click', ()=> {
+green.addEventListener('click', () =>
+ {
     // console.log("green clicked")
     startGame = true;
     green.style.backgroundColor = "green";
@@ -196,7 +195,7 @@ function playerSelection(){
                 lose();
            }
         }
-},10000)
+},30000)
 
     // simonSelections()
 }
@@ -229,11 +228,15 @@ function winner(){
 // ----------- Lose Function------------------//
 function lose(){
     displayScreen.innerHTML ="You lose the game";
+    counter.innerHTML ="Game Over";
     start.setAttribute("disabled", true);
-    allButton.setAttribute('disabled', true)
+    allButton.forEach(button =>{
+        button.setAttribute('disabled', true)
+    })
+   
 }
 
-///
-function disableButtons(){
-    // allButton.setAttribute('disable', true)
-}
+// ///
+// function disableButtons(){
+//     allButton.setAttribute('disable', true)
+// }

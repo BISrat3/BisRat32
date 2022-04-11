@@ -221,7 +221,9 @@ h2{
     color: whitesmoke;
     margin: 10px 10px;
 }
-
+.disable{
+    pointer-events: none;
+}
 /* * footer division  */  
 .footer
 {
