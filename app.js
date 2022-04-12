@@ -91,7 +91,7 @@ reset.addEventListener('click', ()=> {
     start.style.background = "black";
     start.style.color = "cornflowerblue";
     // start.setAttribute("disabled", false);
-    displayScreen.setAttribute("disabled", "true")
+    // displayScreen.setAttribute("disabled", "true")
 })
 
 //--- Start button functionality  ---------//
