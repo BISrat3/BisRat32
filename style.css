@@ -8,8 +8,11 @@
 body {
     background-color:darkslategray;
     width:auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eae6f7;
+    opacity: 15px;
+    background-image: radial-gradient(circle at center center, #5145f7, #eae6f7), repeating-radial-gradient(circle at center center, #5145f7, #5145f7, 4px, transparent 8px, transparent 4px);
+    background-blend-mode: multiply;
 }
 
 /*----------header style----------------*/
@@ -73,7 +76,7 @@ h2{
     height: 500px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: -60px;
+    margin-top: 0%;
     border: 10px;
     /* padding-top: 5px ; */
     background-color:darkturquoise;

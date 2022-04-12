@@ -84,18 +84,14 @@ yellow.addEventListener('click', ()=> {
 //--- Reset button functionality    ---------//
 reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
-    startGame = false;
     counter.innerHTML = "";
     player = [];
     simonChoice = [];
     displayScreen.innerHTML ="Press Start Button to begin the Game"
     start.style.background = "black";
     start.style.color = "cornflowerblue";
-    start.setAttribute("enabled", false);
+    // start.setAttribute("disabled", false);
     displayScreen.setAttribute("disabled", "true")
-    allButton.forEach(button =>{
-        button.setAttribute('disabled', true)
-    })
 })
 
 //--- Start button functionality  ---------//
@@ -233,8 +229,7 @@ function playerSelection(){
             }
             level++;
         }
-    },7000)
-    
+    },3000)
     // simonSelections()
 }
 
