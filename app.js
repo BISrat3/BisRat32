@@ -40,6 +40,7 @@ green.addEventListener('click', () =>
     } ,150)
     console.log(player)
     // playerSelection()
+    displayScreen.innerHTML = "It is my turn";
 })
 red.addEventListener('click', ()=> {
     // console.log("red clicked")
@@ -115,6 +116,9 @@ start.addEventListener('click', ()=> {
         player = [];
         getSelectedColor();
     }  
+    else{
+        displayScreen.innerHTML = "It is my turn";
+    }
         // playerSelection()   
 })
 // --------------- Function for selecting random color--------------------//
@@ -176,7 +180,7 @@ function simonSelections(){
                     
                 }
             }  
-            displayScreen.innerHTML = "Players turn";
+            
         }, 500 * i)
     })
 }
@@ -188,6 +192,7 @@ function playerSelection(){
         if(startGame === true){
             if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
                 // displayScreen.innerHTML ="Proceed to the next level"
+                
                 setTimeout(()=>{
                     if(level <=5){
                         displayScreen.setAttribute("disabled", "true")
@@ -217,8 +222,7 @@ function playerSelection(){
                     }  
                 },2000)
                 // levelDisplay()
-                console.log("Correct");
-                
+                console.log("Correct Match");
                 winner();
             }
             else
@@ -236,13 +240,13 @@ function playerSelection(){
 
 //----------- Winner Function -----------------//
 function winner(){
-    displayScreen.innerHTML ="You win the " + level + " level. Press start to coninue the game";
+    displayScreen.innerHTML ="You win eve level" + level + " . Press start to coninue the game";
     // start.setAttribute("enable", false);
 }
 
 // ----------- Lose Function------------------//
 function lose(){
-    displayScreen.innerHTML ="You lose the game";
+    displayScreen.innerHTML ="You lose." + "Please click start Button to play a new game";
     counter.innerHTML ="Game Over";
     start.setAttribute("disabled", true);
     allButton.forEach(button =>{
