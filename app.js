@@ -31,13 +31,14 @@ counter.setAttribute("disabled", "true")
 green.addEventListener('click', () =>
  {
     // console.log("green clicked")
+    
     startGame = true;
     green.style.backgroundColor = "green";
     player.push('green')
     setTimeout(()=>
     {
         green.style.backgroundColor = "springgreen"
-    } ,150)
+    } ,200)
     console.log(player)
     // playerSelection()
     displayScreen.innerHTML = "It is my turn";
@@ -50,7 +51,7 @@ red.addEventListener('click', ()=> {
     setTimeout(()=>
     {
         red.style.backgroundColor = "tomato"
-    } ,150)
+    } ,200)
     console.log(player)
     // playerSelection()
 })
@@ -62,7 +63,7 @@ blue.addEventListener('click', ()=> {
     setTimeout(()=>
     {
         blue.style.backgroundColor  = "lightskyblue"
-    } ,150)
+    } ,200)
     console.log(player)
     // playerSelection()
    
@@ -75,7 +76,7 @@ yellow.addEventListener('click', ()=> {
     setTimeout(()=>
     {
         yellow.style.backgroundColor = "lightyellow"
-    } ,150)
+    } ,200)
     // startGame =false;
     console.log(player)
     // playerSelection()
@@ -86,6 +87,7 @@ reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
     counter.innerHTML = "";
     player = [];
+    level =1;
     simonChoice = [];
     displayScreen.innerHTML ="Press Start Button to begin the Game"
     start.style.background = "black";
@@ -177,13 +179,14 @@ function simonSelections(){
                 }
             }  
             
-        }, 500 * i)
+        }, 1000 * i)
     })
 }
 
 // // // --------- player vs simon function comparsion-------------------//
 
 function playerSelection(){
+
     setTimeout(()=>{
         if(startGame === true){
             if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
@@ -191,11 +194,13 @@ function playerSelection(){
                 
                 setTimeout(()=>{
                     if(level <=5){
+                        winner();
                         displayScreen.setAttribute("disabled", "true")
                         counter.setAttribute("disabled", "true")
                         counter.innerHTML = "Level - " + level; 
                     }
-                },700)
+                    
+                },600)
                 setTimeout(()=>{
                     if(level <=10 ){
                         displayScreen.setAttribute("disabled", "true")
@@ -206,6 +211,7 @@ function playerSelection(){
                     if(level <=16 ){
                         displayScreen.setAttribute("disabled", "true")
                         counter.innerHTML = "Level - " + level; 
+                        winner();
                     }
                 },1500)
                 setTimeout(()=>{
@@ -216,10 +222,10 @@ function playerSelection(){
                         counter.innerHTML ="You win the Game";
                         displayScreen.innerHTML = 'Game is over';
                     }  
-                },2000)
+                },1000)
                 // levelDisplay()
                 console.log("Correct Match");
-                winner();
+               
             }
             else
             {
@@ -229,7 +235,8 @@ function playerSelection(){
             }
             level++;
         }
-    },3000)
+    },5000)
+
     // simonSelections()
 }
 

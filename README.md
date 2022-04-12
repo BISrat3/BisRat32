@@ -1,20 +1,8 @@
 ### Simon Game
 
 ## Simon Game
-
-Simon game instructs the player to follow the sequence of flash buttons. To get a higher score and increase the level, the player must click the four colored buttons correctly. The level of the game gets harder and harder the longer you play.
-
-## Basic User stories
 <hr>
-<ul>
-<li> As a user, I have to click the flash buttons in sequence.</li>
-<li> As a user, I have to see the color changes and click properly.</li>
-<li> As a user, I have to reset if I make an invalid move.</li>
-<li> As a user, I have to know when I win the game.</li>
-</ul>
-
-## Actual game
-<img src="../Project1/Project1_Simon/Simon Game.png" alt="Simon_Game">
+Simon game instructs the player to follow the sequence of flash buttons. To get a higher score and increase the level, the player must click the four colored buttons correctly. The level of the game gets harder and harder the longer you play.
 
 ## Techonologies Used 
 <hr>
@@ -26,6 +14,19 @@ Simon game instructs the player to follow the sequence of flash buttons. To get 
 <li> HTML</li>
 <li> CSS</li>
 </ul>
+
+## Actual game
+<img src="./Simon Game.png" alt="Simon_Game">
+
+## Basic User stories
+<hr>
+<ul>
+<li> As a user, I have to click the flash buttons in sequence.</li>
+<li> As a user, I have to see the color changes and click properly.</li>
+<li> As a user, I have to reset if I make an invalid move.</li>
+<li> As a user, I have to know when I win the game.</li>
+</ul>
+
 
 ## MVP Goals
 <hr>
