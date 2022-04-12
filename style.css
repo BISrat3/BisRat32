@@ -1,36 +1,40 @@
-*{
+* {
     margin: 0px auto;
     width: 0px auto;
     height: 0px auto;
 }
-/* body style */
-body{
+
+/*-------body style----- -*/
+body {
     background-color:darkslategray;
     width:auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
    
 }
-/* header style */
-.header{
+
+/*----------header style----------------*/
+.header {
     text-align: center;
     font-size: 48px;
     color: maroon;
     font-family:"https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;1,300&display=swap";
 }
+
 /* h1 style */
-h1{
+h1 {
     margin-top: 30px;
     text-align: center;
     font-size: 80px;
 }
 /* body section  */
-.sectionOne{
+.sectionOne {
     align-items:  center;
     font-size: 20px;
     color:midnightblue;
 }
+
 /*------ gamebored screen ---------*/
-.screenBoard{
+.screenBoard {
     align-items:  center;
     text-align: center;
     font-size: 30px;
@@ -61,14 +65,15 @@ h2{
     border-color: 1px black;
 }
 
-/* circle division  */
-.circle{
+/*---------circle division --------------*/
+.circle {
     position: relative;
     border-radius:50%;
     width: 500px;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    margin-top: -60px;
     border: 10px;
     /* padding-top: 5px ; */
     background-color:darkturquoise;
@@ -83,7 +88,7 @@ h2{
 }
 
 /* * Green button  */ 
-.greenBtn{
+.greenBtn {
     width: 250px;
     height: 250px;
     background-color:springgreen;
@@ -100,11 +105,11 @@ h2{
     cursor: pointer;
 } */
 
-.greenBtn:active{
+.greenBtn:active {
     background-color:darkgreen;
 }
 /* * red button  */ 
-.redBtn{
+.redBtn {
     width: 250px;
     height: 250px;
     background-color:tomato;
@@ -120,11 +125,11 @@ h2{
     cursor: pointer;
 } */
 
-.redBtn:active{
+.redBtn:active {
     background-color:darkred;
 }
 /* * start Button  */  
-.startBtn{
+.startBtn {
     width: 150px;
     height: 150px;
     background-color:black;
@@ -156,12 +161,12 @@ h2{
     cursor: pointer;
 } */
 
-.yellowBtn:active{
+.yellowBtn:active {
     background-color:yellow;
 }
 
 /* * Blue button  */ 
-.blueBtn{
+.blueBtn {
     width: 250px;
     height: 250px;
     background-color:lightskyblue;
@@ -176,25 +181,24 @@ h2{
     cursor: pointer;
 } */
 
-.blueBtn:active{
+.blueBtn:active {
     background-color:darkblue;
 }
 
 /* * Level and Reset Section   */  
-.display{
+.display {
     display: flex;
     margin: -50px 20px;
     justify-content: center;
     text-align: center;
-
 }
 /* * Level division  */  
-.score, #inputCounter{
+.score, #inputCounter {
     align-items:  center;
     font-size: 25px;
     color: whitesmoke;
 }
-#inputCounter{
+#inputCounter {
     width: 200px;
     height: 45px;
     border-radius: 10px;
@@ -205,13 +209,13 @@ h2{
 }
 
 /* * score division  */  
-.restart{
+.restart {
     display: flex;
     justify-content: center;
 }
 
 /* * reset button  */  
-.resetBtn{
+.resetBtn {
     font-size: 30px;
     border-radius: 80px;
     border: 2px solid skyblue;
@@ -221,12 +225,8 @@ h2{
     color: whitesmoke;
     margin: 10px 10px;
 }
-.disable{
-    pointer-events: none;
-}
 /* * footer division  */  
-.footer
-{
+.footer {
     align-items:  center;
     font-size: 40;
 }

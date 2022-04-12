@@ -2,7 +2,6 @@
 let player = [];
 let simonChoice = [];
 const arrayColors = ['green','red','yellow','blue'];
-// let winner;
 let level =1;
 let startGame = false;
 
@@ -24,10 +23,11 @@ const allButton = document.querySelectorAll('#buttons')
 // console.log(allButton)
 const counter= document.querySelector("#inputCounter")
 
-//--- adding eventListener and functionality for each button ---------//
-// allButton.addEventListener('click', disableButtons)
+// --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
 counter.setAttribute("disabled", "true")
+
+//--- adding eventListener and functionality for each button ---------//
 green.addEventListener('click', () =>
  {
     // console.log("green clicked")
@@ -98,6 +98,7 @@ reset.addEventListener('click', ()=> {
 })
 
 //--- Start button functionality  ---------//
+
 let win = true; 
 start.addEventListener('click', ()=> {
     // console.log("start clicked")
@@ -111,21 +112,11 @@ start.addEventListener('click', ()=> {
         counter.innerHTML = "Level - " + level;
         start.style.background ="green"
         start.style.color ="white"
-        displayScreen.setAttribute("disabled", "true")
         player = [];
-        // levelDisplay();
         getSelectedColor();
     }  
         // playerSelection()   
 })
-
-
-// --------------- Game Over Function --------------------//
-function gameOver(){
-    counter.innerHTML =""
-    displayScreen.innerHTML ="Game Over"
-    startGame = false;
-}
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
@@ -155,7 +146,7 @@ function simonSelections(){
                     {
                         green.style.backgroundColor = "springgreen"
                     } ,300)
-                
+                    
                 }
                 else if(simonChoice[i] === arrayColors[1]){
                     red.style.backgroundColor = "red";
@@ -164,7 +155,7 @@ function simonSelections(){
                     {
                         red.style.backgroundColor = "tomato"
                     } , 300)
-                 
+                    
                 }
                 else if (simonChoice[i] === arrayColors[2]){
                     yellow.style.backgroundColor = "yellow";
@@ -182,7 +173,7 @@ function simonSelections(){
                     {
                         blue.style.backgroundColor = "lightskyblue"
                     } ,300)
-
+                    
                 }
             }  
             displayScreen.innerHTML = "Players turn";
@@ -190,11 +181,11 @@ function simonSelections(){
     })
 }
 
- // // // --------- player vs simon function comparsion-------------------//
+// // // --------- player vs simon function comparsion-------------------//
 
 function playerSelection(){
     setTimeout(()=>{
-    if(startGame === true){
+        if(startGame === true){
             if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
                 // displayScreen.innerHTML ="Proceed to the next level"
                 setTimeout(()=>{
@@ -217,31 +208,57 @@ function playerSelection(){
                     }
                 },1500)
                 setTimeout(()=>{
-                   if (level >16){  
-                    displayScreen.setAttribute("disabled", "true")
-                       start.setAttribute("disabled", true);
-                       simonChoice = [];
-                    counter.innerHTML ="You win the Game";
-                    displayScreen.innerHTML = 'Game is over';
-                            }  
-                    },2000)
+                    if (level >16){  
+                        displayScreen.setAttribute("disabled", "true")
+                        start.setAttribute("disabled", true);
+                        simonChoice = [];
+                        counter.innerHTML ="You win the Game";
+                        displayScreen.innerHTML = 'Game is over';
+                    }  
+                },2000)
                 // levelDisplay()
                 console.log("Correct");
                 
                 winner();
             }
             else
-                {
+            {
                 start.setAttribute("disabled", true);
                 console.log("Time expired");
                 lose();
-           }
-           level++;
-    }
-},7000)
-
+            }
+            level++;
+        }
+    },7000)
+    
     // simonSelections()
 }
+
+//----------- Winner Function -----------------//
+function winner(){
+    displayScreen.innerHTML ="You win the " + level + " level. Press start to coninue the game";
+    // start.setAttribute("enable", false);
+}
+
+// ----------- Lose Function------------------//
+function lose(){
+    displayScreen.innerHTML ="You lose the game";
+    counter.innerHTML ="Game Over";
+    start.setAttribute("disabled", true);
+    allButton.forEach(button =>{
+        button.setAttribute('disabled', true)
+    })
+    win =false;
+    
+}
+
+// --------------- Game Over Function --------------------//
+function gameOver() {
+    counter.innerHTML =""
+    displayScreen.innerHTML ="Game Over"
+    startGame = false;
+}
+
 // --------------- Level of the game --------------------//
 // function levelDisplay(){
 //     // level = Math.min(level +=1);
@@ -261,21 +278,3 @@ function playerSelection(){
 //             }  
 //         }   
 // }
-
-//----------- Winner Function -----------------//
-function winner(){
-    displayScreen.innerHTML ="You win the " + level + " level. Press start to coninue the game";
-    // start.setAttribute("enable", false);
-}
-
-// ----------- Lose Function------------------//
-function lose(){
-    displayScreen.innerHTML ="You lose the game";
-    counter.innerHTML ="Game Over";
-    start.setAttribute("disabled", true);
-    allButton.forEach(button =>{
-        button.setAttribute('disabled', true)
-    })
-   win =false;
-
-}
