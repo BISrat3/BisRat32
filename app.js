@@ -26,7 +26,8 @@ const counter= document.querySelector("#inputCounter")
 
 //--- adding eventListener and functionality for each button ---------//
 // allButton.addEventListener('click', disableButtons)
-
+displayScreen.setAttribute("disabled", "true")
+counter.setAttribute("disabled", "true")
 green.addEventListener('click', () =>
  {
     // console.log("green clicked")
@@ -83,7 +84,6 @@ yellow.addEventListener('click', ()=> {
 reset.addEventListener('click', ()=> {
     // console.log("reset clicked")
     startGame = false;
-    displayScreen.innerHTML =""
     counter.innerHTML = "";
     player = [];
     simonChoice = [];
@@ -91,6 +91,7 @@ reset.addEventListener('click', ()=> {
     start.style.background = "black";
     start.style.color = "cornflowerblue";
     start.setAttribute("enabled", false);
+    displayScreen.setAttribute("disabled", "true")
     allButton.forEach(button =>{
         button.setAttribute('disabled', true)
     })
@@ -102,13 +103,15 @@ start.addEventListener('click', ()=> {
     // console.log("start clicked")
     if(win === false){
         return start.setAttribute("disabled", true);
+        
     }
     if( startGame = true){
-        displayScreen.innerHTML ="Start the Game"
+        displayScreen.innerHTML ="Player Turn"
         // level++
         counter.innerHTML = "Level - " + level;
         start.style.background ="green"
         start.style.color ="white"
+        displayScreen.setAttribute("disabled", "true")
         player = [];
         // levelDisplay();
         getSelectedColor();
@@ -196,21 +199,26 @@ function playerSelection(){
                 // displayScreen.innerHTML ="Proceed to the next level"
                 setTimeout(()=>{
                     if(level <=5){
+                        displayScreen.setAttribute("disabled", "true")
+                        counter.setAttribute("disabled", "true")
                         counter.innerHTML = "Level - " + level; 
                     }
                 },700)
                 setTimeout(()=>{
                     if(level <=10 ){
+                        displayScreen.setAttribute("disabled", "true")
                         counter.innerHTML = "Level - " + level; 
                     }
                 },1000)
                 setTimeout(()=>{
                     if(level <=16 ){
+                        displayScreen.setAttribute("disabled", "true")
                         counter.innerHTML = "Level - " + level; 
                     }
                 },1500)
                 setTimeout(()=>{
                    if (level >16){  
+                    displayScreen.setAttribute("disabled", "true")
                        start.setAttribute("disabled", true);
                        simonChoice = [];
                     counter.innerHTML ="You win the Game";
