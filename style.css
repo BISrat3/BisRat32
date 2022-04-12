@@ -93,6 +93,7 @@ h2{
     border: 10px solid  maroon;
     /* padding-top: 5px ; */
     background-color:darkturquoise;
+
     
     /* justify-content: space-between; */
     /* background-color:cadetblue;
@@ -103,6 +104,10 @@ h2{
     padding: 10px; */ 
     
 }
+
+/* .circleFlame{
+    background-image: url("https://media4.giphy.com/media/3o6vXTpomeZEyxufGU/200w.webp?cid=ecf05e47df4xyakz1f9qhsxxyw0wmfhrkeovameo7pmdsz8z&rid=200w.webp&ct=g");
+} */
 
 /* * Green button  */ 
 .greenBtn {
