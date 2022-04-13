@@ -128,7 +128,7 @@ function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
     // simonChoice.push(colorSelected)
     // console.log(colorSelected)
-    if(level<=7){
+    if(level<=10){
         simonChoice.push(colorSelected)
     }
     else{
@@ -204,8 +204,8 @@ function playerSelection(){
                 }
                 level++;
             }
-        },5000)
-    } else if(level <= 7) {
+        },10000)
+    } else if(level < 10) {
         setTimeout(()=>{
             if(startGame === true){
                 if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
@@ -219,15 +219,34 @@ function playerSelection(){
                 }
                 level++;
             }
-        },8000)
+        },15000)
+        
+    }
+    else if(level === 10) {
+        setTimeout(()=>{
+            if(startGame === true){
+                if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
+                    winner();
+                }
+                else
+                {
+                    start.setAttribute("disabled", true);
+                    console.log("Time expired");
+                    lose();
+                }
+            }
+        },20000)
     }
     
 }
 //----------- Winner Function -----------------//
 function winner(){
-    if(startGame === true){
+    if(startGame === true && level < 10){
         displayScreen.innerHTML ="Player wins level " + level + ".  Computers turn";
         // displayScreen.innerHTML = ;
+    }
+    else if(startGame === true && level === 10){
+        displayScreen.innerHTML ="Congragulation you win."
     }
     else{
         return;
