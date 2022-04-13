@@ -118,10 +118,7 @@ start.addEventListener('click', ()=> {
         player = [];
         getSelectedColor();
     }  
-    // else{
-    //     displayScreen.innerHTML = "It is my turn";
-    // }
-        // playerSelection()   
+  
 })
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
@@ -188,7 +185,6 @@ function simonSelections(){
 }
 
 // // // --------- player vs simon function comparsion-------------------//
-
 function playerSelection(){
     if(level <= 5) {
         setTimeout(()=>{
@@ -237,7 +233,6 @@ function playerSelection(){
             }
         },20000)
     }
-    
 }
 //----------- Winner Function -----------------//
 function winner(){
@@ -246,7 +241,7 @@ function winner(){
         // displayScreen.innerHTML = ;
     }
     else if(startGame === true && level === 10){
-        displayScreen.innerHTML ="Congragulation you win."
+        displayScreen.innerHTML ="Congratulation you are the winner."
     }
     else{
         return;
@@ -267,82 +262,3 @@ function lose(){
     
 }
 
-// // --------------- Game Over Function --------------------//
-// function gameOver() {
-//     counter.innerHTML =""
-//     displayScreen.innerHTML ="Game Over"
-// //     startGame = false;
-// }
-    // setTimeout(()=>{
-    //     if(startGame === true){
-    //         if(player.length === simonChoice.length && player.every((value, i) => value === simonChoice[i])){
-    //             // displayScreen.innerHTML ="Proceed to the next level"
-                
-    //             setTimeout(()=>{
-    //                 if(level <=5){
-    //                     winner();
-    //                     displayScreen.setAttribute("disabled", "true")
-    //                     counter.setAttribute("disabled", "true")
-    //                     counter.innerHTML = "Level - " + level; 
-    //                 }
-                    
-    //             },600)
-    //             setTimeout(()=>{
-    //                 if(level <=10 ){
-    //                     displayScreen.setAttribute("disabled", "true")
-    //                     counter.innerHTML = "Level - " + level; 
-    //                 }
-    //             },1000)
-    //             setTimeout(()=>{
-    //                 if(level <=16 ){
-    //                     displayScreen.setAttribute("disabled", "true")
-    //                     counter.innerHTML = "Level - " + level; 
-    //                     winner();
-    //                 }
-    //             },1500)
-    //             setTimeout(()=>{
-    //                 if (level >16){  
-        //                     displayScreen.setAttribute("disabled", "true")
-    //                     start.setAttribute("disabled", true);
-    //                     simonChoice = [];
-    //                     counter.innerHTML ="You win the Game";
-    //                     displayScreen.innerHTML = 'Game is over';
-    //                 }  
-                // },1000)
-                // levelDisplay()
-                // console.log("Correct Match");
-               
-            // }
-            // else
-            // {
-            //     start.setAttribute("disabled", true);
-            //     console.log("Time expired");
-            //     lose();
-            // }
-            // level++;
-    //     }
-    // },5000)
-
-    // simonSelections()
-// }
-
-
-// --------------- Level of the game --------------------//
-// function levelDisplay(){
-//     // level = Math.min(level +=1);
-//     if (startGame === true){
-//             level ++;
-//            if(level <=5){
-//                 counter.innerHTML = "Level - " + level; 
-//             }
-//            else if (level <= 16){ 
-//                 counter.innerHTML= "Final level"
-//             }       
-//            else if (level >16){  
-//                 simonChoice = [];
-//                 start.setAttribute("disabled", true);
-//                 counter.innerHTML ="You win the Game"
-//                 displayScreen.innerHTML = 'Game is over'
-//             }  
-//         }   
-// }
