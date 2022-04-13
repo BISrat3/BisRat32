@@ -7,20 +7,20 @@ let startGame = false;
 
 // ------- query selection elements ---------//
 const green = document.querySelector('.greenBtn')
-// console.log(green)
+
 const red = document.querySelector('.redBtn')
-// console.log(red)
+
 const start = document.querySelector('.startBtn')
-// console.log(start)
+
 const yellow = document.querySelector('.yellowBtn')
-// console.log(yellow)
+
 const blue = document.querySelector('.blueBtn')
-// console.log(blue)
+
 const reset = document.querySelector('.resetBtn')
-// console.log(reset)
+
 const displayScreen = document.querySelector("#screenInput")
 const allButton = document.querySelectorAll('#buttons')
-// console.log(allButton)
+
 const counter= document.querySelector("#inputCounter")
 
 
@@ -31,8 +31,6 @@ counter.setAttribute("disabled", "true")
 //--- adding eventListener and functionality for each button ---------//
 green.addEventListener('click', () =>
  {
-    // console.log("green clicked")
-    
     startGame = true;
     green.style.backgroundColor = "green";
     player.push('green')
@@ -41,12 +39,10 @@ green.addEventListener('click', () =>
         green.style.backgroundColor = "springgreen"
     } ,200)
     console.log(player)
-    // playerSelection()
-    // displayScreen.innerHTML = "It is my turn";
+
 })
 
 red.addEventListener('click', ()=> {
-    // console.log("red clicked")
     startGame = true;
     red.style.backgroundColor = "red";
     player.push('red')
@@ -58,7 +54,7 @@ red.addEventListener('click', ()=> {
 }) 
 
 blue.addEventListener('click', ()=> {
-    // console.log("blue clicked")
+
     startGame = true;
     blue.style.backgroundColor = "blue";
     player.push('blue')
@@ -70,7 +66,7 @@ blue.addEventListener('click', ()=> {
 })
 
 yellow.addEventListener('click', ()=> {
-    // console.log("yellow clicked")
+
     startGame = true;
     yellow.style.backgroundColor = "yellow";
     player.push('yellow')
@@ -78,13 +74,13 @@ yellow.addEventListener('click', ()=> {
     {
         yellow.style.backgroundColor = "lightyellow"
     } ,200)
-    // startGame =false;
+
     console.log(player)
 })
 
 //--- Reset button functionality    ---------//
 reset.addEventListener('click', ()=> {
-    // console.log("reset clicked")
+
     counter.innerHTML = "";
     player = [];
     level = 1;
@@ -116,8 +112,6 @@ start.addEventListener('click', ()=> {
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
-    // simonChoice.push(colorSelected)
-    // console.log(colorSelected)
     if(level<=10){
         simonChoice.push(colorSelected)
     }
@@ -128,7 +122,6 @@ function getSelectedColor(){
     console.log(simonChoice)
     simonSelections();
 }
-// getSelectedColor()
 
 // --------------- function of simon selection--------------------//
 function simonSelections(){    
@@ -137,7 +130,6 @@ function simonSelections(){
             if (startGame === true){
                 if(simonChoice[i] === arrayColors[0]){
                     green.style.backgroundColor = "green";
-                    //  console.log(simonChoice[i])
                     setTimeout(()=>
                     {
                         green.style.backgroundColor = "springgreen"
@@ -146,7 +138,6 @@ function simonSelections(){
                 }
                 else if(simonChoice[i] === arrayColors[1]){
                     red.style.backgroundColor = "red";
-                    //  console.log(simonChoice[i])
                     setTimeout(()=>
                     {
                         red.style.backgroundColor = "tomato"
@@ -155,7 +146,7 @@ function simonSelections(){
                 }
                 else if (simonChoice[i] === arrayColors[2]){
                     yellow.style.backgroundColor = "yellow";
-                    //  console.log(simonChoice[i])
+
                     setTimeout(()=>
                     {
                         yellow.style.backgroundColor  = "lightyellow"
@@ -164,7 +155,7 @@ function simonSelections(){
                 }
                 else if (simonChoice[i] === arrayColors[3]){
                     blue.style.backgroundColor = "blue";
-                    //  console.log(simonChoice[i])
+
                     setTimeout(()=>
                     {
                         blue.style.backgroundColor = "lightskyblue"
@@ -189,7 +180,6 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
-                    console.log("Time expired");
                     lose();
                 }
                 level++;
@@ -204,7 +194,6 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
-                    console.log("Time expired");
                     lose();
                 }
                 level++;
@@ -221,7 +210,7 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
-                    console.log("Time expired");
+
                     lose();
                 }
             }
@@ -233,10 +222,10 @@ function playerSelection(){
 function winner(){
     if(startGame === true && level < 10){
         displayScreen.innerHTML ="Player wins level " + level + ".  Computers turn";
-        // displayScreen.innerHTML = ;
+
     }
     else if(startGame === true && level === 10){
-        displayScreen.innerHTML ="Congratulation you are the winner."
+        displayScreen.innerHTML ="Congratulation you win."
     }
     else {
         return 

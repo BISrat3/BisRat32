@@ -54,7 +54,7 @@ Simon game instructs the player to follow the sequence of flashing buttons. To m
 
 
  ## Wireframes 
- # Welcome Page
+ ## Welcome Page
 
 <img width="571" alt="Simon_Wireframe" src="./Simon_Wire_Frame.png">
 
