@@ -44,6 +44,7 @@ green.addEventListener('click', () =>
     // playerSelection()
     // displayScreen.innerHTML = "It is my turn";
 })
+
 red.addEventListener('click', ()=> {
     // console.log("red clicked")
     startGame = true;
@@ -54,8 +55,8 @@ red.addEventListener('click', ()=> {
         red.style.backgroundColor = "tomato"
     } ,200)
     console.log(player)
-    // playerSelection()
-})
+}) 
+
 blue.addEventListener('click', ()=> {
     // console.log("blue clicked")
     startGame = true;
@@ -66,9 +67,8 @@ blue.addEventListener('click', ()=> {
         blue.style.backgroundColor  = "lightskyblue"
     } ,200)
     console.log(player)
-    // playerSelection()
-   
 })
+
 yellow.addEventListener('click', ()=> {
     // console.log("yellow clicked")
     startGame = true;
@@ -80,7 +80,6 @@ yellow.addEventListener('click', ()=> {
     } ,200)
     // startGame =false;
     console.log(player)
-    // playerSelection()
 })
 
 //--- Reset button functionality    ---------//
@@ -94,32 +93,26 @@ reset.addEventListener('click', ()=> {
     start.style.background = "black";
     start.style.color = "cornflowerblue";
     start.disabled = false;
-    win= true;
+    win = true;
     startGame =true;
-    // displayScreen.setAttribute("disabled", "true")
 })
 
 //--- Start button functionality  ---------//
-
 let win = true; 
 start.addEventListener('click', ()=> {
-    // console.log("start clicked")
     if(win === false){
         return start.setAttribute("disabled", true);
-        
     }
     if( startGame = true){
         displayScreen.innerHTML ="Player Turn"
-        // level++
         counter.innerHTML = "Level - " + level;
         start.style.background ="green";
-        // start.classList.add('circleFlame')
         start.style.color ="white";
         player = [];
         getSelectedColor();
     }  
-  
 })
+
 // --------------- Function for selecting random color--------------------//
 function getSelectedColor(){
     let colorSelected =  arrayColors[Math.floor(Math.random() * arrayColors.length)]
@@ -184,7 +177,8 @@ function simonSelections(){
     
 }
 
-// // // --------- player vs simon function comparsion-------------------//
+//--------- player vs simon function comparsion-------------------//
+// -------- Used reference W3 docs and stackoverflow-------------//
 function playerSelection(){
     if(level <= 5) {
         setTimeout(()=>{
@@ -200,7 +194,7 @@ function playerSelection(){
                 }
                 level++;
             }
-        },10000)
+        },7000)
     } else if(level < 10) {
         setTimeout(()=>{
             if(startGame === true){
@@ -215,7 +209,7 @@ function playerSelection(){
                 }
                 level++;
             }
-        },15000)
+        },10000)
         
     }
     else if(level === 10) {
@@ -231,9 +225,10 @@ function playerSelection(){
                     lose();
                 }
             }
-        },20000)
+        },12000)
     }
-}
+} 
+
 //----------- Winner Function -----------------//
 function winner(){
     if(startGame === true && level < 10){
@@ -243,11 +238,9 @@ function winner(){
     else if(startGame === true && level === 10){
         displayScreen.innerHTML ="Congratulation you are the winner."
     }
-    else{
-        return;
+    else {
+        return 
     }
-    
-    // start.setAttribute("enable", false);
 }
 
 // ----------- Lose Function------------------//
@@ -258,7 +251,6 @@ function lose(){
     allButton.forEach(button =>{
         button.setAttribute('disabled', true)
     })
-    win =false;
-    
+    win =false;  
 }
 
