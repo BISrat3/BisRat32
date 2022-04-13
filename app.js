@@ -23,7 +23,6 @@ const allButton = document.querySelectorAll('#buttons')
 
 const counter= document.querySelector("#inputCounter")
 
-
 // --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
 counter.setAttribute("disabled", "true")
