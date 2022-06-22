@@ -119,7 +119,7 @@ function getSelectedColor(){
         simonChoice.pop(colorSelected)
     }
     playerSelection()
-    console.log(simonChoice)
+    // console.log(simonChoice)
     simonSelections();
 }
 
@@ -234,12 +234,12 @@ function winner(){
 
 // ----------- Lose Function------------------//
 function lose(){
-    displayScreen.innerHTML ="You lose." + "Click Reset and Start to play a new game";
+    displayScreen.innerHTML ="You lose." + "Click start to play a new game";
     counter.innerHTML ="Game Over";
     start.setAttribute("disabled", true);
-    // allButton.forEach(button =>{
-    //     button.setAttribute('disabled', true)
-    // })
+    allButton.forEach(button =>{
+        button.setAttribute('disabled', true)
+    })
     win =false;  
 }
 
