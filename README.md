@@ -20,7 +20,7 @@ Simon game instructs the player to follow the sequence of flashing buttons. To m
 <ul>
 <li> As a user, I want to click the flashing buttons as Simon said.</li>
 <li> As a user, I want to see the color changes properly.</li>
-<li> As a user, I want to click the reset button if I clicked an invalid button.</li>
+<li> As a user, I want to click the reset button if I clicked an invalid or wrong buttons.</li>
 <li> As a user, I should know when I win or lose the game.</li>
 </ul>
 
@@ -29,19 +29,20 @@ Simon game instructs the player to follow the sequence of flashing buttons. To m
 <li> To start the game the player must click start button.</li>
 <li> Then after click the button exactly the same as Simon. </li>
 <li> The order really matters, so the player must click the buttons in the same order.</li>
-<li> If the player wrongly clicks the  button, they will lose the game.</li>
+<li> If the player wrongly clicks the  button, he/she can click the reset button to start a new game before time expires.</li>
+</ul>
 
 ## When does the player loses the game?
 <ul>
 <li> The player loses the game when clicking the wrong button.</li>
-<li> The player loses the game when they didn't click the button in the set timeout. </li>
-<li> The player loses the count when they keep clicking the wrong button in the level.</li>
+<li> The player loses the game when he/she didn't click the buttons before time expires. </li>
+<li> The player must refresh browser if he/she loses the game, because the winner celebrates by disabling all the buttons. </li>
 </ul>
 
 ## When does the player win the game?
- <ul>
+<ul>
 <li> The player wins the game when clicking the buttons, as Simon says.</li> 
-<li> The player wins when completing all the 10 levels of the game. </li> 
+<li> The player wins when completing all the 10 levels. </li> 
 </ul>
 
 ## MVP Goals
@@ -67,7 +68,7 @@ Links to GitHub Repository : https://github.com/BISrat3/Project1_Simon.git
 <li> Download and install Visual Studio Code</li> 
 <li> Fork and Clone the repository https://github.com/BISrat3/Project1_Simon.git </li>
 <li> Right click to Open file "index.html" in Visual Studio Code.</li>
-
+</ul>
 
  ## Future Goals
 I will enhance the game by allowing more players to simultaneously play the game and by adding audio at each level. 
