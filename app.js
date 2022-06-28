@@ -5,7 +5,7 @@ const arrayColors = ['green','red','yellow','blue'];
 let level =1;
 let startGame = false;
 
-// ------- query selection elements ---------//
+// ------- dom ---------//
 const green = document.querySelector('.greenBtn')
 
 const red = document.querySelector('.redBtn')
@@ -119,7 +119,6 @@ function getSelectedColor(){
         simonChoice.pop(colorSelected)
     }
     playerSelection()
-    // console.log(simonChoice)
     simonSelections();
 }
 
