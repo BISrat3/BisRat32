@@ -22,7 +22,9 @@ const displayScreen = document.querySelector("#screenInput")
 const allButton = document.querySelectorAll('#buttons')
 
 const counter= document.querySelector("#inputCounter")
+let soundFirst =document.getElementById('sound')
 
+const loseSound = document.getElementById('lose')
 // --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
 counter.setAttribute("disabled", "true")
@@ -129,6 +131,7 @@ function simonSelections(){
             if (startGame === true){
                 if(simonChoice[i] === arrayColors[0]){
                     green.style.backgroundColor = "green";
+                    soundFirst.play();
                     setTimeout(()=>
                     {
                         green.style.backgroundColor = "springgreen"
@@ -137,6 +140,7 @@ function simonSelections(){
                 }
                 else if(simonChoice[i] === arrayColors[1]){
                     red.style.backgroundColor = "red";
+                    soundFirst.play();
                     setTimeout(()=>
                     {
                         red.style.backgroundColor = "tomato"
@@ -145,7 +149,7 @@ function simonSelections(){
                 }
                 else if (simonChoice[i] === arrayColors[2]){
                     yellow.style.backgroundColor = "yellow";
-
+                    soundFirst.play();
                     setTimeout(()=>
                     {
                         yellow.style.backgroundColor  = "lightyellow"
@@ -154,7 +158,7 @@ function simonSelections(){
                 }
                 else if (simonChoice[i] === arrayColors[3]){
                     blue.style.backgroundColor = "blue";
-
+                    soundFirst.play();
                     setTimeout(()=>
                     {
                         blue.style.backgroundColor = "lightskyblue"
@@ -179,6 +183,7 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
+                    loseSound.play();
                     lose();
                 }
                 level++;
@@ -193,6 +198,7 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
+                    loseSound.play();
                     lose();
                 }
                 level++;
@@ -209,7 +215,7 @@ function playerSelection(){
                 else
                 {
                     start.setAttribute("disabled", true);
-
+                    loseSound.play();
                     lose();
                 }
             }
