@@ -19,6 +19,7 @@ const blue = document.querySelector('.blueBtn')
 const reset = document.querySelector('.resetBtn')
 
 const displayScreen = document.querySelector("#screenInput")
+
 const allButton = document.querySelectorAll('#buttons')
 
 const counter= document.querySelector("#inputCounter")
@@ -26,6 +27,7 @@ const counter= document.querySelector("#inputCounter")
 let soundFirst =document.getElementById('sound')
 
 const loseSound = document.getElementById('lose')
+
 const winSounds = document.getElementById('winSound')
 // --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
@@ -77,7 +79,6 @@ yellow.addEventListener('click', ()=> {
     {
         yellow.style.backgroundColor = "lightyellow"
     } ,200)
-
     console.log(player)
 })
 
@@ -165,7 +166,6 @@ function simonSelections(){
                     {
                         blue.style.backgroundColor = "lightskyblue"
                     } ,150)
-
                 }
             }  
         }, 1000 * i)
@@ -229,7 +229,6 @@ function playerSelection(){
 function winner(){
     if(startGame === true && level < 10){
         displayScreen.innerHTML ="Player wins level " + level + ".  Computers turn";
-
     }
     else if(startGame === true && level === 10){
         winSounds.play()
