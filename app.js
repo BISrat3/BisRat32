@@ -22,9 +22,11 @@ const displayScreen = document.querySelector("#screenInput")
 const allButton = document.querySelectorAll('#buttons')
 
 const counter= document.querySelector("#inputCounter")
+
 let soundFirst =document.getElementById('sound')
 
 const loseSound = document.getElementById('lose')
+const winSounds = document.getElementById('winSound')
 // --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
 counter.setAttribute("disabled", "true")
@@ -230,6 +232,7 @@ function winner(){
 
     }
     else if(startGame === true && level === 10){
+        winSounds.play()
         displayScreen.innerHTML ="Congratulation you win."
     }
     else {
