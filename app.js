@@ -244,7 +244,7 @@ function winner(){
 
 // ----------- Lose Function------------------//
 function lose(){
-    displayScreen.innerHTML ="You lose." +"Refresh the page to start again";
+    displayScreen.innerHTML ="You lose."+" Refresh the page to start again";
     counter.innerHTML ="Game Over";
     start.setAttribute("disabled", true);
     allButton.forEach(button =>{

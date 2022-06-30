@@ -75,7 +75,7 @@ h1 {
 /* -----Heading H2 screen display ------- */
 h2{
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-align: center;
     font-size: 30px;
     color:whitesmoke;
@@ -86,7 +86,7 @@ h2{
     font-size: 25px;
     text-align: center;
     width:230px;
-    height:100px;
+    height:120px;
     padding: 2px 5px;
     background-color:lightblue;
     border-top-left-radius: 15%;
