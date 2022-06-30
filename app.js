@@ -29,6 +29,8 @@ let soundFirst =document.getElementById('sound')
 const loseSound = document.getElementById('lose')
 
 const winSounds = document.getElementById('winSound')
+
+const resetAudio = document.getElementById('resetSound')
 // --------------Disable the screen and level area---------------------//
 displayScreen.setAttribute("disabled", "true")
 counter.setAttribute("disabled", "true")
@@ -95,6 +97,7 @@ reset.addEventListener('click', ()=> {
     start.disabled = false;
     win = true;
     startGame =true;
+    resetAudio.play();
     
 })
 
@@ -241,7 +244,7 @@ function winner(){
 
 // ----------- Lose Function------------------//
 function lose(){
-    displayScreen.innerHTML ="You lose." + "Refresh the page to play a new game";
+    displayScreen.innerHTML ="You lose." +"Refresh the page to start again";
     counter.innerHTML ="Game Over";
     start.setAttribute("disabled", true);
     allButton.forEach(button =>{
